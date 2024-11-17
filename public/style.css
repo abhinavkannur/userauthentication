@@ -1,0 +1,103 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Auth and Home Containers */
+.auth-container, .home-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Form Styling */
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Input Fields */
+.auth-container input {
+  width: 100%;
+  max-width: 350px;
+  padding: 15px;
+  margin: 0 auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-container input:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+  outline: none;
+}
+
+/* Placeholder Text */
+.auth-container input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  max-width: 350px;
+  padding: 12px;
+  margin: 0 auto;
+  background: #2575fc;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #1b5bbd;
+  transform: scale(1.02);
+}
+
+/* Logout Button */
+.logout-button {
+  background: #ff4b5c;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.logout-button:hover {
+  background: #d43545;
+  transform: scale(1.02);
+}
+
+/* Links */
+.auth-container a {
+  color: #2575fc;
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
