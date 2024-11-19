@@ -32,9 +32,14 @@ const userschema=new mongoose.Schema({
     type: String,
     required: [true, 'Password is required'],
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,  // Timestamp for when the user is created
+  role:{
+    type:String,
+    enum:['user','admin'],
+    default:'user',
+  },
+  isActive:{
+    type:Boolean,
+    default:true,
   }
 });
 userschema.pre('save',async function(next){

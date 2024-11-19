@@ -2,13 +2,15 @@ const express = require('express');
 const session = require('express-session');
 const path = require('path');
 const mongoose = require('mongoose');
+
 const app = express();
 
 
 // Database connection
 mongoose.connect('mongodb://localhost:27017/UserData')
   .then(() => console.log('DB connected successfully'))
-  .catch((err) => console.error('Error in DB connection', err));
+  .catch((err) =>console.error('Error in DB connection', err));
+  
 
 app.use(express.urlencoded({ extended: false }));  // Express built-in body parser for URL-encoded data
 app.use(express.json());  // Add this to handle JSON requests
@@ -22,11 +24,15 @@ app.use(
   })
 );
 
+
 app.set('view engine', 'ejs');
 
 // Routes
 const authroutes = require('./routes/auth');
+const adminroutes=require('./routes/admin');
+
 app.use('/', authroutes);
+app.use('/',adminroutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

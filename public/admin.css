@@ -1,0 +1,105 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Container Styles */
+.login-container, .admin-panel-container, .update-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Elements */
+form {
+  margin-top: 2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Table Styles (Admin Panel) */
+table {
+  width: 100%;
+  margin-top: 2rem;
+  border-collapse: collapse;
+  background: white;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.update-icon, .delete-icon {
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0 5px;
+}
+
+.update-icon:hover {
+  color: #4CAF50;
+}
+
+.delete-icon:hover {
+  color: red;
+}
+
+/* User Actions */
+.user-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.user-actions a {
+  text-decoration: none;
+  color: #4CAF50;
+}
+
+.user-actions a:hover {
+  text-decoration: underline;
+}
