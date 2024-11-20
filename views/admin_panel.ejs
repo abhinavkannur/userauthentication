@@ -12,7 +12,17 @@
     </header>
 
     <main class="admin-panel-container">
-        <h2>User Management</h2>
+        <h2 style="text-align: center;">User Management</h2>
+
+ 
+        <!-- Search Bar -->
+        <div class="small-search-bar">
+            <form action="/adminsearch" method="get">
+                <input type="text" name="q" id="searchInput" placeholder="Search users..." />
+                <button type="submit">SEARCH🔍</button>
+            </form>
+        </div>
+       
         <table>
             <thead>
                 <tr>
@@ -41,5 +51,10 @@
             </tbody>
         </table>
     </main>
+
+    
+</script>
+
 </body>
+
 </html>

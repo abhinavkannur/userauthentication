@@ -24,7 +24,7 @@ app.use(
   })
 );
 
-
+//Template engine
 app.set('view engine', 'ejs');
 
 // Routes

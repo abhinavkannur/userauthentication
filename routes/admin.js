@@ -84,7 +84,38 @@ router.get('/delete/:id',async(req,res)=>{
     res.status(500).send('something went wrong');
   }
 });
+//search
 
+router.get('/adminsearch', async (req, res) => {
+  const { q } = req.query;  // Get the search query from the URL
+  
+  if (!q || q.trim() === "") {
+    // If there's no search query, fetch all users
+    try {
+      const users = await User.find({ role: 'user' });
+      return res.render('admin_panel', { users });
+    } catch (error) {
+      console.log('Error fetching users:', error);
+      return res.status(500).send('Something went wrong');
+    }
+  }
+  
+  // If there's a search query, filter users by name, email, or username
+  try {
+    const users = await User.find({
+      role: 'user',
+      $or: [
+        { name: { $regex: q, $options: 'i' } },
+        { username: { $regex: q, $options: 'i' } },
+        { email: { $regex: q, $options: 'i' } }
+      ]
+    });
+    return res.render('admin_panel', { users });
+  } catch (error) {
+    console.log('Error during search:', error);
+    return res.status(500).send('Something went wrong');
+  }
+});
 
 
 module.exports=router;
