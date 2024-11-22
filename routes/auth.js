@@ -10,7 +10,7 @@ router.get('/login',(req,res)=>{
   res.render('login');
 })
 
-router.get('/',(req,res)=>{
+router.get('/',(req,res)=>{ 
   res.redirect('/login')
 })
 
@@ -29,6 +29,8 @@ router.post('/signup',async(req,res)=>{
 
 });
 router.get('/home', (req, res) => {
+
+  // res.setHeader('Cache-Control','no-cache,no-store,must-revalidate')
   // Assuming userId is stored in the session and you have a User model to fetch user data
   if (req.session.userId) {
     User.findById(req.session.userId)
@@ -71,6 +73,7 @@ router.post('/login', async (req, res) => {
     // Set session
     req.session.userId = user._id;
     console.log('Session initialized', req.session);
+
     res.redirect('/home');
   } catch (error) {
     console.log('Error in login', error);

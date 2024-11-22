@@ -21,6 +21,12 @@ app.use(
     secret: 'secret-key',
     resave: false,
     saveUninitialized: true,
+    cookie: {
+      httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
+      secure: false, // Use 'true' if your app runs over HTTPS
+      maxAge: 1000 * 60 * 60, // Cookie expiration time in milliseconds (1 hour)
+    },
+
   })
 );
 
